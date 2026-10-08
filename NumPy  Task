@@ -1,0 +1,522 @@
+Numpy
+NumPy Core Operations
+NumPy stands for Numerical Python.
+It is a Python library used for working with numbers, arrays, and mathematical calculations.
+NumPy is very useful in:
+Data Science
+Machine Learning
+Data Analysis
+Artificial Intelligence
+The main benefit of NumPy is that it can perform calculations on a large amount of numerical data very easily.
+1. Import NumPy
+First, we need to import NumPy.
+import numpy as np
+​
+np is just a short name for NumPy.
+After importing it, we can use NumPy functions like this:
+np.array()
+np.mean()
+np.max()
+​
+2. Python List vs NumPy Array
+A normal Python list looks like this:
+marks = [70, 80, 90, 60]
+​
+A NumPy array looks like this:
+import numpy as np
+
+marks = np.array([70, 80, 90, 60])
+
+print(marks)
+​
+Output:
+[70 80 90 60]
+​
+Both can store data, but NumPy arrays are better for numerical calculations.
+For example:
+marks = np.array([70, 80, 90])
+
+print(marks + 5)
+​
+Output:
+[75 85 95]
+​
+NumPy adds 5 to every value automatically.
+3. Creating NumPy Arrays
+One-Dimensional Array
+numbers = np.array([10, 20, 30, 40])
+
+print(numbers)
+​
+Output:
+[10 20 30 40]
+​
+This is called a 1D array.
+Two-Dimensional Array
+marks = np.array([
+    [70, 80, 90],
+    [60, 75, 85],
+    [88, 92, 95]
+])
+
+print(marks)
+​
+Output:
+[[70 80 90]
+ [60 75 85]
+ [88 92 95]]
+​
+We can imagine this data as student marks.
+        Math   English   Science
+
+Ali      70       80       90
+Sara     60       75       85
+Ahmed    88       92       95
+​
+Rows can represent students.
+Columns can represent subjects.
+4. Important Array Properties
+Suppose we have this array:
+data = np.array([
+    [10, 20, 30],
+    [40, 50, 60]
+])
+​
+ndim
+ndim tells us how many dimensions the array has.
+print(data.ndim)
+​
+Output:
+2
+​
+shape
+shape tells us the number of rows and columns.
+print(data.shape)
+​
+Output:
+(2, 3)
+​
+This means:
+2 rows
+3 columns
+​
+size
+size tells us the total number of values.
+print(data.size)
+​
+Output:
+6
+​
+dtype
+dtype tells us the data type.
+print(data.dtype)
+​
+Example output:
+int64
+​
+5. Indexing
+Indexing means getting one specific value from an array.
+Indexing starts from 0.
+numbers = np.array([10, 20, 30, 40, 50])
+
+print(numbers[0])
+​
+Output:
+10
+​
+Another example:
+print(numbers[2])
+​
+Output:
+30
+​
+Negative Indexing
+To get the last value:
+print(numbers[-1])
+​
+Output:
+50
+​
+6. Indexing in a 2D Array
+marks = np.array([
+    [70, 80, 90],
+    [60, 75, 85]
+])
+​
+To get 80:
+print(marks[0, 1])
+​
+Output:
+80
+​
+The pattern is:
+array[row, column]
+​
+So:
+marks[0, 1]
+​
+means:
+Row 0
+Column 1
+​
+7. Slicing
+Slicing means getting multiple values from an array.
+numbers = np.array([10, 20, 30, 40, 50])
+
+print(numbers[1:4])
+​
+Output:
+[20 30 40]
+​
+The pattern is:
+[start : stop]
+​
+The start value is included.
+The stop value is not included.
+8. Vectorized Operations
+This is one of the most important features of NumPy.
+NumPy can perform one operation on all values at the same time.
+numbers = np.array([10, 20, 30, 40])
+​
+Add:
+print(numbers + 5)
+​
+Output:
+[15 25 35 45]
+​
+Multiply:
+print(numbers * 2)
+​
+Output:
+[20 40 60 80]
+​
+Subtract:
+print(numbers - 5)
+​
+Output:
+[ 5 15 25 35]
+​
+Divide:
+print(numbers / 2)
+​
+Output:
+[ 5. 10. 15. 20.]
+​
+This is called a vectorized operation.
+We do not need to use a loop for every value.
+9. Operations Between Two Arrays
+We can also perform operations between two arrays.
+a = np.array([10, 20, 30])
+
+b = np.array([1, 2, 3])
+​
+Addition:
+print(a + b)
+​
+Output:
+[11 22 33]
+​
+It works like this:
+10 + 1 = 11
+20 + 2 = 22
+30 + 3 = 33
+​
+Multiplication:
+print(a * b)
+​
+Output:
+[10 40 90]
+​
+It works like this:
+10 × 1
+20 × 2
+30 × 3
+​
+This is called an element-wise operation.
+10. Mathematical Functions
+NumPy already has many useful mathematical functions.
+Square Root
+numbers = np.array([4, 9, 16, 25])
+
+print(np.sqrt(numbers))
+​
+Output:
+[2. 3. 4. 5.]
+​
+Power
+numbers = np.array([2, 3, 4])
+
+print(np.power(numbers, 2))
+​
+Output:
+[ 4  9 16]
+​
+Absolute Value
+numbers = np.array([-10, -5, 4, 8])
+
+print(np.abs(numbers))
+​
+Output:
+[10  5  4  8]
+​
+Round
+numbers = np.array([4.2, 5.7, 8.9])
+
+print(np.round(numbers))
+​
+Output:
+[4. 6. 9.]
+​
+11. Aggregation Functions
+Aggregation functions give us summary values.
+Example:
+marks = np.array([70, 85, 60, 95, 80])
+​
+Sum
+print(np.sum(marks))
+​
+Output:
+390
+​
+Average
+print(np.mean(marks))
+​
+Output:
+78.0
+​
+Maximum Value
+print(np.max(marks))
+​
+Output:
+95
+​
+Minimum Value
+print(np.min(marks))
+​
+Output:
+60
+​
+Median
+print(np.median(marks))
+​
+Standard Deviation
+print(np.std(marks))
+​
+Standard deviation tells us how spread out the values are.
+12. Conditions in NumPy
+We can apply conditions directly to NumPy arrays.
+marks = np.array([30, 50, 80, 45, 90, 20])
+
+print(marks >= 50)
+​
+Output:
+[False  True  True False  True False]
+​
+NumPy checks every value.
+For example:
+30 >= 50 → False
+50 >= 50 → True
+80 >= 50 → True
+​
+13. Filtering Data
+We can also get only the values that match a condition.
+Example:
+marks = np.array([30, 50, 80, 45, 90, 20])
+
+passed = marks[marks >= 50]
+
+print(passed)
+​
+Output:
+[50 80 90]
+​
+To get failed marks:
+failed = marks[marks < 50]
+
+print(failed)
+​
+Output:
+[30 45 20]
+​
+Filtering is very useful in data analysis.
+14. Reshape
+reshape() changes the structure of an array.
+Example:
+numbers = np.array([1, 2, 3, 4, 5, 6])
+​
+Currently:
+[1 2 3 4 5 6]
+​
+Now convert it into 2 rows and 3 columns:
+new_array = numbers.reshape(2, 3)
+
+print(new_array)
+​
+Output:
+[[1 2 3]
+ [4 5 6]]
+​
+Important rule:
+The total number of values must stay the same.
+2 × 3 = 6
+​
+So the reshape is possible.
+15. Flatten
+flatten() changes a multi-dimensional array into a one-dimensional array.
+data = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+print(data.flatten())
+​
+Output:
+[1 2 3 4 5 6]
+​
+16. Useful NumPy Functions
+zeros()
+Creates an array with zero values.
+print(np.zeros(5))
+​
+Output:
+[0. 0. 0. 0. 0.]
+​
+ones()
+Creates an array with one values.
+print(np.ones(5))
+​
+Output:
+[1. 1. 1. 1. 1.]
+​
+arange()
+Creates a range of numbers.
+print(np.arange(1, 11))
+​
+Output:
+[ 1  2  3  4  5  6  7  8  9 10]
+​
+Using a step:
+print(np.arange(0, 11, 2))
+​
+Output:
+[ 0  2  4  6  8 10]
+​
+17. Random Numbers
+NumPy can also generate random numbers.
+marks = np.random.randint(40, 100, 10)
+
+print(marks)
+​
+Example output:
+[56 78 88 43 91 67 75 82 60 95]
+​
+The output can be different every time.
+This is useful for testing and practice.
+Class Practice: Student Marks Analyzer
+Now we will use different NumPy concepts in one small program.
+Problem
+We have marks of different students.
+We want to find:
+Average marks
+Highest marks
+Lowest marks
+Total passed students
+Total failed students
+Code
+import numpy as np
+
+marks = np.array([45, 78, 90, 32, 67, 88, 55, 40, 95, 28])
+
+print("Student Marks:")
+print(marks)
+
+print("\nAverage Marks:", np.mean(marks))
+print("Highest Marks:", np.max(marks))
+print("Lowest Marks:", np.min(marks))
+
+passed = marks[marks >= 50]
+failed = marks[marks < 50]
+
+print("\nPassed Students Marks:")
+print(passed)
+
+print("Failed Students Marks:")
+print(failed)
+
+print("\nTotal Passed:", len(passed))
+print("Total Failed:", len(failed))
+​
+Student Practice Tasks
+Task 1
+Create this array:
+10, 20, 30, 40, 50
+​
+Find:
+Sum
+Average
+Maximum
+Minimum
+Task 2
+Create this array:
+45, 80, 30, 90, 55, 20
+​
+Display only the values greater than or equal to 50.
+Task 3
+Create this array:
+1, 2, 3, 4, 5, 6
+​
+Change it into:
+2 rows
+3 columns
+​
+Task 4
+Generate 10 random marks between 40 and 100.
+Then find:
+Average
+Highest marks
+Lowest marks
+Task 5
+Create this marks array:
+35, 67, 89, 45, 90, 22, 70, 58
+​
+Passing marks are 50.
+Find:
+Passed marks
+Failed marks
+Number of passed students
+Number of failed students
+Quick Revision
+After this topic, you should understand:
+What NumPy is
+How to create NumPy arrays
+1D and 2D arrays
+ndim
+shape
+size
+dtype
+Indexing
+Slicing
+Vectorized operations
+Mathematical functions
+Sum, mean, min, and max
+Conditions
+Filtering
+Reshape
+Flatten
+Random numbers
+Main Idea
+NumPy is not only used to create arrays.
+It helps us store and process numerical data easily and efficiently.
+Data
+  ↓
+NumPy Array
+  ↓
+Operations
+  ↓
+Filtering
+  ↓
+Calculations
+  ↓
+Data Analysis
+​
+These NumPy concepts will also help us later when we start working with Pandas, Data Analysis, and Machine Learning.
